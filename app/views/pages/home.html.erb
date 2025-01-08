@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mapa z markerem</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: { lat: 51.5074, lng: -0.1278 }, // London
+          zoom: 14
+        });
+
+        // Adding a marker w St. James's Park
+        var marker = new google.maps.Marker({
+          position: { lat: 51.502, lng: -0.132 }, // Location
+          map: map,
+          title: "St. James's Park"
+        });
+
+        // Adding a marker w Tilgate Park
+        var tilgateMarker = new google.maps.Marker({
+          position: { lat: 51.096839, lng: -0.173847 }, // Location Tilgate Park
+          map: map,
+          title: "Tilgate Park"
+        });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v6.8/mapsJavaScriptAPI.js"
+    async defer></script>
+  </body>
+</html>
